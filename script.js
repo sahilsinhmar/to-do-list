@@ -12,16 +12,16 @@ window.addEventListener("load", () => {
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (taskInput.value.trim() === "") {
-    // if the task is empty, do nothing
-    return;
-  }
+
   const myObj = {
     id: Date.now(),
     task: document.getElementById("task").value,
     date: document.getElementById("date").value,
   };
-
+  if (task.value.trim() === "") {
+    // if the task is empty, do nothing
+    return;
+  }
   arr.push(myObj);
   display();
 });
