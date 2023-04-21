@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#" class="form-container">
+      <div class="input-container">
+        <div class="input-label">
+          <label class="label" for="task">What you wanna do today ?</label>
+          <input
+            class="task-input"
+            type="text"
+            id="task"
+            name="task"
+            placeholder="Enter your task"
+            required
+          />
+        </div>
+        <div class="input-label">
+          <label class="label" for="date">Date</label>
+          <input
+            class="date-input"
+            type="date"
+            id="date"
+            name="date"
+            required
+          />
+        </div>
+      </div>
+      <button class="btn" type="submit">Add</button>
+    </form>
+    <div class="message"></div>
+  </body>
+</html>
