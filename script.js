@@ -12,6 +12,10 @@ window.addEventListener("load", () => {
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
+  if (taskInput.value.trim() === "") {
+    // if the task is empty, do nothing
+    return;
+  }
   const myObj = {
     id: Date.now(),
     task: document.getElementById("task").value,
@@ -33,8 +37,21 @@ function display() {
     let itemDiv = document.createElement("div");
     itemDiv.classList.add("task");
     itemDiv.innerHTML = `<div class='item-task'>${item.task} </div>
-    <div class='date'>${item.date}</div>`;
+    <div class='date'>${item.date}</div>
+    <button class="delete" data-id="${item.id}">Delete</button>`;
     info.append(itemDiv);
+  });
+
+  const deleteBtns = document.querySelectorAll(".delete");
+  deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const taskId = parseInt(e.target.getAttribute("data-id"));
+      console.log(taskId);
+      const taskIndex = arr.findIndex((item) => item.id === taskId);
+      console.log(taskIndex);
+      arr.splice(taskIndex, 1);
+      display();
+    });
   });
 
   // Append the created HTML elements to the container
